@@ -1,0 +1,48 @@
+.view .round {
+    position: absolute;
+    top: calc(50% - 40vmin);
+    left: calc(50% - 40vmin);
+    width: 80vmin;
+    height: 80vmin
+}
+
+.view .round::before,
+.view .round::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    transform: scale(0)
+}
+
+.view .round::before {
+    background-color: #4aa9a4
+}
+
+.view .round::after {
+    background-color: #faf7d9
+}
+
+.view .round::before {
+    animation: scale0-1 .5s cubic-bezier(0.2,0.85,0.07,0.97) .9s forwards;
+    -webkit-animation: scale0-1 .5s cubic-bezier(0.2,0.85,0.07,0.97) .9s forwards;
+}
+
+.view .round::after {
+    animation: scale0-1 .5s cubic-bezier(0.2,0.85,0.07,0.97) 1s forwards;
+    -webkit-animation: scale0-1 .5s cubic-bezier(0.2,0.85,0.07,0.97) 1s forwards;
+}
+
+@keyframes scale0-1 {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
